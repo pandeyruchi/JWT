@@ -8,7 +8,7 @@
  * Controller of the learnJwtApp
  */
 angular.module('learnJwtApp')
-  .controller('RegisterCtrl', function ($scope,$rootScope,$http,alert) {
+  .controller('RegisterCtrl', function ($scope,$rootScope,$http,alert,authtoken) {
    $scope.submit = function () {
 
      var url = 'http://localhost:3000/register';
@@ -21,6 +21,7 @@ angular.module('learnJwtApp')
      $http.post(url, user)
        .success(function(res){
          alert('success','OK!','You are now registered')
+         authtoken.setToken(res.token);
        })
        .error(function (res) {
          alert('warning','Opps!','Could not register')

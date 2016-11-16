@@ -42,7 +42,7 @@ mongoose.connect('mongodb://ruchi:hello21@ds153657.mlab.com:53657/jwt')
 
 console.log(jwt.encode('hi','secret'));
 
-/*var server =app.listen(3000, function () {
+var server =app.listen(3000, function () {
   console.log("api listening on", server.address().port);
-})*/
+})
 
